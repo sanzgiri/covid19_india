@@ -19,13 +19,15 @@ def run_training():
     model.detect_growth('data/covid19_data_backtesting.csv', 'data/covid19_processed_backtesting_data_', True)
     model.calculate_forecast()
     
-scheduler = BlockingScheduler()
-scheduler.add_job(
-    func=run_training,
-    trigger='cron',
-    hour='1', 
-    minute='00')
-scheduler.start()
+# scheduler = BlockingScheduler()
+# scheduler.add_job(
+#     func=run_training,
+#     trigger='cron',
+#     hour='0',
+#     minute='24')
+# scheduler.start()
+#
+# atexit.register(lambda: scheduler.shutdown())
 
-atexit.register(lambda: scheduler.shutdown())
-
+if __name__ == "__main__":
+    run_training()

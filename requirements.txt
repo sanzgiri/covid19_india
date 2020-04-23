@@ -1,0 +1,11 @@
+apscheduler
+flask
+flask-cors
+pandas
+numpy
+scipy
+convertdate
+fbprophet
+plotly
+requests
+plotly

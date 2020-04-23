@@ -1,9 +1,4 @@
 
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 from fbprophet import Prophet
@@ -19,14 +14,8 @@ import logging
 logging.getLogger('fbprophet').setLevel(logging.WARNING)
 
 
-# In[2]:
-
-
 def fetch_data():
     prepare_data.build_covid19_data()
-
-
-# In[3]:
 
 
 # Define function with the coefficients to estimate
@@ -34,15 +23,9 @@ def func_logistic(t, a, b, c):
     return c / (1 + a * np.exp(-b*t))
 
 
-# In[4]:
-
-
 # Hill sigmoidal function
 def func_hill(t, a, b, c):
     return a * np.power(t, b) / (np.power(c, b) + np.power(t, b)) 
-
-
-# In[5]:
 
 
 def detect_growth(input_file, output_file, backtesting):
