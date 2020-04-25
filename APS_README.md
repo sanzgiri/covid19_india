@@ -23,3 +23,4 @@ npm install -g @oracle/ojet-cli
 ojet restore
 ojet serve
 ```
+* App runs at `http://<aws-external-ip>:5001//katana-ml/api/v1.0/forecast/covid19/countries`
