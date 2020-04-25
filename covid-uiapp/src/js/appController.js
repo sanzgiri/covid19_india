@@ -11,7 +11,8 @@ define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 'o
   function (ResponsiveUtils, ResponsiveKnockoutUtils, ko, ArrayDataProvider, DateTimeConverter) {
     function ControllerViewModel() {
       var self = this;
-      let baseURL = 'https://app.katanaml.io/katana-ml/api/v1.0/forecast/covid19';
+      
+      let baseURL = 'http://44.225.109.114:5001/katana-ml/api/v1.0/forecast/covid19';
 
       let dateConverter = new DateTimeConverter.IntlDateTimeConverter(
         {
@@ -78,7 +79,7 @@ define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 'o
             data.forEach(function (item) {
               self.countriesList.push({ value: item[0], label: item[0].replace("_cases", "") });
             })
-            self.currentCountry('Lithuania_cases');
+            self.currentCountry('TT_cases');
           })
         })
       }
@@ -178,7 +179,7 @@ define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 'o
           console.log('Fetch Error :-S', err);
         })
       }
-      self.fetchStatsPerCountry('Lithuania_cases');
+      self.fetchStatsPerCountry('TT_cases');
 
       // Footer
       function footerLink(name, id, linkTarget) {

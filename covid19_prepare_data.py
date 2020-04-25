@@ -7,7 +7,7 @@ def build_covid19_data():
     dfi = pd.read_csv("https://api.covid19india.org/csv/latest/state_wise_daily.csv")
     dfi = dfi.fillna(0)
 
-    states_to_skip = ['JH']
+    states_to_skip = ['JH', 'HP']
     dfi = dfi.drop(states_to_skip, axis=1)
 
     dfa = dfi[dfi.Status == "Confirmed"]
