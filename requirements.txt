@@ -5,7 +5,7 @@ pandas
 numpy
 scipy
 convertdate
+lunarcalendar
 fbprophet
 plotly
 requests
-plotly
